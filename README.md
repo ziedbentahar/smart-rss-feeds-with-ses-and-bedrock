@@ -2,7 +2,7 @@
 <p align="center" style="text-align:center;">
 <img src="./assests/smart-feeds.png" alt="Smart feeds"  width="400" />
 <br>
-Smart Feeds<br>
+<strong>Smart Feeds</strong><br>
 
 
 A  service that generates smart RSS feeds from your newsletter subscriptions, extracting key insights and summaries from the content you follow.
