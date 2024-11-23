@@ -1,7 +1,8 @@
 import { z } from "zod";
 
 const feedConfigSchema = z.object({
-    feedName: z.string(),
+    name: z.string(),
+    description: z.string().optional(),
     newsletterSendersAllowList: z.array(z.string()),
 });
 

@@ -3,6 +3,7 @@ import { NewsletterIssueGist } from "models/newsletter-gist";
 import { Hono } from "hono";
 import { html } from "hono/html";
 import { toXML } from "jstoxml";
+import { getFeedConfiguration } from "adapters/feed-config";
 
 export const feeds = new Hono().get("/:id/rss", async (c) => {
     const feedId = c.req.param("id");
@@ -11,6 +12,12 @@ export const feeds = new Hono().get("/:id/rss", async (c) => {
         header: true,
         indent: "  ",
     };
+
+    const feedConfig = await getFeedConfiguration(feedId);
+
+    if (!feedConfig) {
+        return c.status(404);
+    }
 
     let feedItems: NewsletterIssueGist[] = [];
 
@@ -75,10 +82,10 @@ export const feeds = new Hono().get("/:id/rss", async (c) => {
             _content: {
                 channel: [
                     {
-                        title: `✨ Awesome serverless updates ✨`,
+                        title: feedConfig.name,
                     },
                     {
-                        description: `✨ Awesome serverless updates curated from community newsletters ✨`,
+                        description: feedConfig.description,
                     },
                     {
                         link: `https://${process.env.API_HOST}/feeds/${feedId}/rss`,
