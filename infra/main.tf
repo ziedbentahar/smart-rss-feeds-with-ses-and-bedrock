@@ -32,8 +32,6 @@ module "feed_generation" {
   application = var.application
   environment = var.environment
 
-  bucket_events_rule = module.email_handling.object_created_event_rule
-
   process_email_lambda = {
     dist_dir = "../src/dist/email-handling/lambda-handlers"
     name     = "process-email"

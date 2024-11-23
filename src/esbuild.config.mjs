@@ -1,9 +1,7 @@
 import {
-  cleanDistFolder,
   bundleLambdaHandlers,
-} from "./bundle-tools.mjs";
+} from "./bundle.mjs";
 
-await cleanDistFolder();
 
 await bundleLambdaHandlers();
 

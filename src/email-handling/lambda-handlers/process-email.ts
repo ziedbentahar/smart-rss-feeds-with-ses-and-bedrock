@@ -24,18 +24,8 @@ export const lambdaHandler = async (event: S3ObjectCreatedNotificationEvent) => 
 
     if (feedsConfigs.length === 0) {
         console.warn(`No feed config found for ${newsletterEmailFrom}`);
-        //return;
+        return;
     }
-
-    feedsConfigs = [
-        {
-            feedId: "awesome-serverless",
-            config: {
-                feedName: "Awsome Serverless",
-                newsletterSendersAllowList: ["bentaharzied@gmail.com"],
-            },
-        },
-    ];
 
     let shortenedLinks = new Map<string, string>();
     const markdown = generateMarkdown(html, {

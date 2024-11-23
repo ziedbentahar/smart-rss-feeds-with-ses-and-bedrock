@@ -22,13 +22,6 @@ variable "process_llm_output_lambda" {
   })
 }
 
-variable "bucket_events_rule" {
-  type = object({
-    name = string
-    arn  = string
-  })
-}
-
 variable "bucket" {
   type = object({
     id  = string
