@@ -15,6 +15,8 @@ module "email_handling" {
   subdomain   = var.subdomain
 
   subdomain_zone = module.subdomain_setup.subdomain_zone
+
+  bucket = module.stores.bucket
 }
 
 
@@ -44,11 +46,13 @@ module "feed_generation" {
     handler  = "process-llm-output.handler"
   }
 
-  bucket = module.email_handling.bucket
+  bucket = module.stores.bucket
 
   newsletter_feeds_table = module.stores.newsletter_feeds_table
   feed_config_table      = module.stores.feed_config_table
   shorted_links_table    = module.stores.shorted_links_table
+
+  depends_on = [module.stores]
 }
 
 module "api" {
@@ -72,6 +76,6 @@ module "api" {
 
   subdomain_zone = module.subdomain_setup.subdomain_zone
 
-  emails_bucket = module.email_handling.bucket
+  emails_bucket = module.stores.bucket
 
 }

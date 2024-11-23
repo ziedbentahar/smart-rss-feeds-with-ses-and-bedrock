@@ -21,3 +21,9 @@ variable "subdomain_zone" {
   })
 }
 
+variable "bucket" {
+  type = object({
+    id  = string
+    arn = string
+  })
+}
