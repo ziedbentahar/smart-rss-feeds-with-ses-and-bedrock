@@ -1,6 +1,6 @@
 <br>
 <p align="center" style="text-align:center;">
-<img src="./assets/smart-feeds.png" alt="Smart feeds"  width="200" />
+<img src="./assests/deployment-view.png" alt="Smart feeds"  width="200" />
 <br>
 Smart Feeds<br>
 
