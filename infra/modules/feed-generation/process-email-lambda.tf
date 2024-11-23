@@ -116,8 +116,7 @@ resource "aws_lambda_function" "process_email_lambda" {
       FEED_CONFIG_TABLE_NAME     = var.feed_config_table.name
       SENDER_EMAIL_GSI           = var.feed_config_table.sender_email_gsi
 
-      TRANSFORMED_EMAILS_BUCKET = var.bucket.id
-      EMAILS_BUCKET             = var.bucket.id
+      EMAILS_BUCKET = var.bucket.id
 
       MODEL_ID = local.model_id
     }

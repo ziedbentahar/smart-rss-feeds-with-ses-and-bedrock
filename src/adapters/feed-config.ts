@@ -7,7 +7,7 @@ const updateFeedConfiguration = async (feedId: string, config: FeedConfig) => {
     try {
         await dynamoDbClient.send(
             new PutItemCommand({
-                TableName: process.env.SUBSCRIPTIONS_TABLE_NAME,
+                TableName: process.env.FEED_CONFIG_TABLE_NAME,
                 Item: {
                     feedId: { S: feedId },
                     config: { S: JSON.stringify(config) },
@@ -24,7 +24,7 @@ const getFeedConfiguration = async (feedId: string): Promise<FeedConfig | null> 
     try {
         const data = await dynamoDbClient.send(
             new GetItemCommand({
-                TableName: process.env.SUBSCRIPTIONS_TABLE_NAME,
+                TableName: process.env.FEED_CONFIG_TABLE_NAME,
                 Key: {
                     feedId: { S: feedId },
                 },
