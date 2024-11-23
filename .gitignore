@@ -1,0 +1,48 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration files
+.terraformrc
+terraform.rc
+
+# Lock file (optional - some teams prefer to track this)
+.terraform.lock.hcl
+
+# Local development overrides
+terraform.tfvars.dev
+terraform.tfvars.local
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# DotNet
+bin/
+obj/
+*.DotSettings.*
+
+# Node
+**/node_modules/
+npm-debug.log*
+.env.local
+.env.*.local
+.next
+
+# Publish
+**/build/
+**/dist/
+**/out/

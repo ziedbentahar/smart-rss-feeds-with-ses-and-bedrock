@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/tsconfig",
+    "extends": "@tsconfig/node20/tsconfig.json",
+    "compilerOptions": {
+      "resolveJsonModule": true,
+      "strict": true,
+      "baseUrl": "./",
+      
+    },
+    "exclude": ["node_modules/", "dist/"],
+  
+   
+  }
