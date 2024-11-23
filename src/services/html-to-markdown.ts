@@ -29,8 +29,6 @@ const generateMarkdown = (
 
     const markdown = turndownService.turndown(html);
 
-    console.log({ markdown });
-
     return markdown;
 };
 
