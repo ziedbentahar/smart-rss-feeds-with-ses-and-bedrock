@@ -59,26 +59,7 @@ export const lambdaHandler = async (event: S3ObjectCreatedNotificationEvent) => 
         })
     ).catch((e) => {
         console.error(e);
-    });
-
-    await addNewItemToFeed(newsletterEmailTo, {
-        feedId: newsletterEmailTo,
-        date,
-        title: subject,
-        emailFrom: newsletterEmailFrom!,
-        id: emailId,
-        ...output,
-    });
-
-    return {
-        newsletter: {
-            id: emailId,
-            from: newsletterEmailFrom,
-            to: newsletterEmailTo,
-            subject: subject,
-            date,
-        },
-    };
+    });    
 };
 
 export const handler = lambdaHandler;
