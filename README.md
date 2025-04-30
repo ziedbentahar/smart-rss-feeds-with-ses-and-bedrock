@@ -5,6 +5,7 @@
 <strong>Smart Feeds</strong><br></p>
 
 
+
 A  service that generates smart RSS feeds from your newsletter subscriptions, extracting key insights and summaries from the content you follow.
 
 
